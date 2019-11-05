@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">Logo?</a>
+
+
+        <ul class="navbar-nav navbar-left">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/calendar">Kalendarz</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link">DummyData</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link">DummyData</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated">
+                <a class="nav-link" (click)="onLogout()">Wyloguj się</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="!isAuthenticated">
+                <a class="nav-link" routerLink="/authorization">Zaloguj się</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated">
+                <a class="nav-link" routerLink="/user"><i class="fa fa-user" style="font-size: 25px;"></i></a>
+            </li>
+        </ul>
+        <!-- TODO: User Panel -->
+    </div>
+</nav>

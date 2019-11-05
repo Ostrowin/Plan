@@ -1,0 +1,45 @@
+<div class="container">
+
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row">
+            <!-- Tytuł? -->
+            <div class="col-12">
+                <label for="title">Tytuł:</label> <br>
+                <mat-form-field>
+                    <input matInput type="text" name="title" id="title" ngModel required>
+                </mat-form-field><br>
+
+                <label for="startDate">Data Rozpoczęcia:</label><br>
+
+                <mat-form-field>
+                    <input matInput name="startDate" id="startDate" [matDatepicker]="picker"
+                        placeholder="Choose a start Date" value="new Date()" [ngModel]="date.value" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field><br>
+
+                <label for="endDate">Data Rozpoczęcia:</label><br>
+
+                <mat-form-field>
+                    <input matInput name="endDate" id="endDate" [matDatepicker]="pickerEnd"
+                        placeholder="Choose an end date" ngModel>
+                    <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerEnd></mat-datepicker>
+                </mat-form-field><br>
+
+                <mat-form-field>
+                    <input matInput name="Time" [ngxTimepicker]="TimePicker" ngModel>
+                    <ngx-material-timepicker #TimePicker></ngx-material-timepicker>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary mr-2" type="submit">Dodaj Event</button>
+                <button class="btn btn-warning mr-2" type="button">Reset</button>
+                <button class="btn btn-danger" type="button" [mat-dialog-close]>Zamknij</button>
+            </div>
+        </div>
+    </form>
+</div>

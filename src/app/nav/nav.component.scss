@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+.navbar-dark .navbar-nav .active>.nav-link {
+    text-shadow: 0 0 20px #fff;
+    color: $active;
+    background-color: #111;
+}
+

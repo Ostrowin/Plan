@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-8 offset-2">
+            <full-calendar 
+            defaultView="dayGridMonth" 
+            [plugins]="calendarPlugins"
+            [events]="events"
+            (dateClick)="onDateClick($event)" 
+            themeSystem='bootstrap'></full-calendar>
+        </div>
+        <div class="col-2" id="UserCalendarSideNav">
+            <!-- <button class="btn btn-primary btn-block" (click)="AddEvent()">Add Event</button> -->
+            <button class="btn btn-primary btn-block" (click)="Savevent()">Save Events</button>
+        </div>
+    </div>
+</div>

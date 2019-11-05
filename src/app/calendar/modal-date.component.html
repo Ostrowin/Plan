@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Hi</h1>
+<div mat-dialog-content>
+  <p>Date: {{data.dateStr}}</p>
+  <input [(ngModel)]="data.kupaData">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button cdkFocusInitial [mat-dialog-close]="data.kupaData">Ok</button>
+</div>
